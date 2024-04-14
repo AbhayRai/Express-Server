@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/logIn.css" />
+  </head>
+  <body>
+    <nav id="Navbar">
+      <div id="Page-links">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="../HTML/about.html">About</a></li>
+        </ul>
+      </div>
+      <div id="btn">
+        <button><a href="#">login In</a></button>
+      </div>
+    </nav>
+    <h1>This is LogIn Page</h1>
+    <section id="content">
+      <form id="form">
+        <h4>Fill the form</h4>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                First Name :-<input type="text" name="first" id="first" />
+              </td>
+              <td>Last Name :-<input type="text" id="last" /></td>
+            </tr>
+            <tr>
+              <td>Mobile :- <input type="text" id="mobile" /></td>
+              <td>Email :- <input type="text" id="email" /></td>
+            </tr>
+            <tr>
+              <td>DOB :- <input type="date" id="dob" /></td>
+              <td>User_ID :- <input type="text" id="uid" /></td>
+            </tr>
+            <tr>
+              <td>
+                Gender :-
+                <input type="radio" id="gender" name="gender" value="M" /><label
+                  for="Male"
+                  >M</label
+                ><input
+                  type="radio"
+                  id="gender"
+                  name="gender"
+                  value="F"
+                /><label for="Female">F</label>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><button>Register</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </section>
+    <script>
+      let form = document.getElementById("form");
+      let userDetail = {};
+      form.addEventListener("input", (event) => {
+        value = event.target.value;
+        id = event.target.id;
+        userDetail[id] = value;
+        console.log(userDetail);
+      });
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const { first, last, mobile, email, dob, uid, gender } = userDetail;
+        if (first && last && mobile && email && dob && uid && gender) {
+          fetch("/newuser", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(userDetail),
+          })
+            .then((data) => data.json()) //data.json() parse the data
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err));
+        } else {
+          alert("Provide all the field");
+        }
+      });
+    </script>
+  </body>
+</html>

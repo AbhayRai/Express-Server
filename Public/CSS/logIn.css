@@ -1,0 +1,122 @@
+*
+{
+    margin: 0px;
+}
+i
+{
+    font-size: 25px;
+}
+a{
+   
+    text-decoration: none;
+    color: black;
+    font-weight: 549;
+
+}
+#logo
+{
+    margin-left: 20px;
+}
+#content{
+    background-color: #212121;
+    color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    font-size: 30px;
+    height: 92vh;
+    padding-top: 10px;
+}
+#Navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    position: sticky;
+    top: 0px;
+    background-color: rgb(240, 185, 83);
+}
+#btn button
+{
+    background-color: rgb(73, 73, 212);
+    color: white;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 5px;
+    width: 110px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    border-radius: 100px;
+    outline: none;
+    cursor: pointer;
+    border: 1.5px solid white;
+
+}
+#btn button a{
+    color: white;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+#Page-links ul
+{
+    display: flex;
+    gap: 50px;
+    
+}
+#Page-links ul li
+{
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: 100;
+}
+form
+{
+    background-color: white;
+    color: black;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    border-radius: 23px;
+}
+form table
+{
+    margin-top: 30px;
+}
+input
+{
+    outline: none;
+
+}
+td
+{
+    padding: 10px;
+    /* text-align: center; */
+    font-size: 20px;
+    position: relative;
+}
+#Male,#Female
+{
+    margin-left: 10px;
+}
+label
+{
+    margin-left: 5px;
+}
+td button
+{
+    font-size: 500;
+    border: none;
+    height: 40px;
+    background-color: yellow;
+    border-radius: 10px;
+    position: absolute;
+    width: 95px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform:uppercase;
+    right: 35px;
+    cursor: pointer;
+}
